@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Community Delivered. Now What? — Becerra's Week in Digital Organizing</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --navy: #0D1F3C;
+    --navy-mid: #162845;
+    --cream: #F7F3EC;
+    --warm-gray: #8A8378;
+    --text: #1A1612;
+    --rule: #C9A84C44;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .masthead {
+    background: var(--navy);
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--gold);
+  }
+  .masthead-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .masthead-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--warm-gray);
+  }
+
+  .hero {
+    background: var(--navy);
+    padding: 80px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 30% 60%, #1e3a6e33 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(38px, 5.5vw, 68px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+  .hero h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .hero-deck {
+    font-size: 18px;
+    color: #b8c4d4;
+    line-height: 1.65;
+    max-width: 680px;
+    font-weight: 300;
+    border-left: 2px solid var(--gold);
+    padding-left: 20px;
+    margin-bottom: 40px;
+  }
+  .hero-byline {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--warm-gray);
+    text-transform: uppercase;
+  }
+  .hero-series {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-top: 16px;
+  }
+
+  /* STATS STRIP */
+  .stats-strip {
+    background: var(--gold);
+    padding: 0 40px;
+  }
+  .stats-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .stat-item {
+    padding: 28px 24px;
+    border-right: 1px solid #0D1F3C33;
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-platform {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.65;
+    margin-bottom: 6px;
+  }
+  .stat-numbers {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+  .stat-numbers strong {
+    display: block;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+  }
+  .stat-arrow {
+    color: var(--navy);
+    font-size: 11px;
+    margin: 0 4px;
+    opacity: 0.5;
+  }
+
+  /* BODY */
+  .article-body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 40px 80px;
+  }
+
+  .lede {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .lede::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.8;
+    margin: 8px 12px 0 0;
+    color: var(--navy);
+  }
+
+  p {
+    font-size: 17px;
+    margin-bottom: 24px;
+    color: #2a2420;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 52px 0 20px;
+    line-height: 1.2;
+  }
+
+  .pullquote {
+    background: var(--navy);
+    color: #fff;
+    padding: 40px 48px;
+    margin: 48px -48px;
+    position: relative;
+  }
+  .pullquote::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    line-height: 1;
+  }
+  .pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.45;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 12px;
+  }
+  .pullquote-attr {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .activity-block {
+    background: #fff;
+    border: 1px solid #e0d8cc;
+    border-left: 4px solid var(--gold);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .activity-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+  .activity-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+  .activity-list li {
+    font-size: 15px;
+    color: #2a2420;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+  .activity-list li::before {
+    content: '→';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* POLL RESULT BLOCK */
+  .poll-block {
+    background: var(--navy);
+    padding: 40px 48px;
+    margin: 48px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .poll-block-title {
+    grid-column: 1 / -1;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ffffff22;
+  }
+  .poll-stat {
+    text-align: center;
+  }
+  .poll-stat .big-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+  .poll-stat .poll-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #b8c4d4;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  /* FUNDRAISING BLOCK */
+  .fundraising-block {
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding: 36px 0;
+    margin: 48px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    text-align: center;
+  }
+  .fundraising-stat {
+    padding: 0 24px;
+    border-right: 1px solid var(--rule);
+  }
+  .fundraising-stat:last-child { border-right: none; }
+  .fundraising-stat .big {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+    display: block;
+  }
+  .fundraising-stat .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  .closing-section {
+    background: var(--navy);
+    padding: 52px 48px;
+    margin: 48px -48px -80px;
+    color: #fff;
+  }
+  .closing-section h2 {
+    color: var(--gold);
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .closing-section p {
+    color: #b8c4d4;
+    font-size: 17px;
+  }
+
+  .source-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--warm-gray);
+    margin-top: -16px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 680px) {
+    .hero { padding: 52px 24px 40px; }
+    .article-body { padding: 44px 24px 60px; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .pullquote { margin: 36px -24px; padding: 32px 28px; }
+    .closing-section { margin: 36px -24px -60px; padding: 40px 28px; }
+    .poll-block { grid-template-columns: 1fr; padding: 32px 28px; }
+    .poll-block-title { grid-column: 1; }
+    .fundraising-block { grid-template-columns: 1fr; }
+    .fundraising-stat { border-right: none; border-bottom: 1px solid var(--rule); padding: 24px 0; }
+    .fundraising-stat:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-label">California 2026 · Case Study, Part II</div>
+  <div class="masthead-date">April 16, 2026</div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Gubernatorial Race · Follow-Up</div>
+    <h1>The Community Delivered. <em>The Numbers Prove It.</em></h1>
+    <div class="hero-deck">
+      One week ago, a grassroots digital community formed around Xavier Becerra with no campaign infrastructure behind it. Here is what it has produced — in polling, in fundraising, and in a debate invitation that wasn't supposed to happen.
+    </div>
+    <div class="hero-byline">By Jeremy Rose · Digital Community Strategist</div>
+    <div class="hero-series">Part II of an ongoing case study · Read Part I first</div>
+  </div>
+</div>
+
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-platform">Overall Polling</div>
+      <div class="stat-numbers">
+        4% <span class="stat-arrow">→</span> <strong>10%</strong>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-platform">Among Democrats</div>
+      <div class="stat-numbers">
+        4% <span class="stat-arrow">→</span> <strong>19%</strong>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-platform">Raised in One Week</div>
+      <div class="stat-numbers"><strong>$650K</strong>#1 on ActBlue</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-platform">Discord Members</div>
+      <div class="stat-numbers">
+        50 <span class="stat-arrow">→</span> <strong>216</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <p class="lede">Last week I wrote about a grassroots digital community that had formed around Xavier Becerra in under 48 hours: 170 volunteers, a Discord server, and a set of coordinated actions that were already producing real-world results. A lot has happened since then. The results are no longer theoretical.</p>
+
+  <p>A new Emerson College Polling survey, conducted April 14–15, 2026, shows Becerra gaining 15 points among Democrats since Swalwell's exit. He now sits at 19% in the Democratic primary, just one point behind frontrunner Tom Steyer. Among all likely primary voters, he has climbed from 4% to 10%. The Californians For Becerra Discord server has grown from 170 to 216 members. And the campaign raised $650,000 in a single week, leading all ActBlue donations nationwide, with a majority coming from first-time donors.</p>
+
+  <p>None of this happened in a vacuum. Here is what the community actually did to help make it happen.</p>
+
+  <h2>How a Debate Door Got Opened</h2>
+
+  <p>KTLA is hosting a California gubernatorial debate on April 22nd. When Swalwell suspended his campaign, Becerra was not on the invitation list. Within the Californians For Becerra Discord, two coordinated initiatives emerged organically: a push to have members call KTLA directly, and a parallel effort to flood the station with emails making the case for Becerra's inclusion.</p>
+
+  <p>The response from KTLA was not a polite acknowledgment. They announced they would run a new poll to determine whether any additional candidates polling above 5% should be invited to join the panel. That poll, conducted by Emerson College Polling, ran April 14–15. Becerra came in at 10% overall and 19% among Democrats.</p>
+
+  <p>He is now confirmed for the April 22nd debate.</p>
+
+  <div class="pullquote">
+    <p>A community of volunteers made enough noise that a major television network changed its debate criteria. Then Becerra went out and met that criteria. That is a case study in what organized digital community can accomplish.</p>
+    <div class="pullquote-attr">The KTLA Sequence</div>
+  </div>
+
+  <h2>What the Emerson Poll Actually Shows</h2>
+
+  <p>The Emerson College Polling/Inside California Politics survey is worth looking at closely, because the numbers tell a more detailed story than the headline figures.</p>
+
+  <div class="poll-block">
+    <div class="poll-block-title">Emerson College Poll · April 14–15, 2026 · n=1,000 likely primary voters · MOE ±3%</div>
+    <div class="poll-stat">
+      <span class="big-number">19%</span>
+      <span class="poll-label">Becerra among<br>Democratic primary voters<br>+15 points since Swalwell exit</span>
+    </div>
+    <div class="poll-stat">
+      <span class="big-number">10%</span>
+      <span class="poll-label">Becerra overall<br>all likely primary voters<br>up from 4%</span>
+    </div>
+  </div>
+
+  <p class="source-note">Source: Emerson College Polling / Inside California Politics, April 2026</p>
+
+  <p>Among Democratic primary voters, Becerra now sits at 19%, trailing only Tom Steyer at 20%, a one-point gap well within the poll's margin of error. Katie Porter is at 15%. In a matter of days, Becerra went from an afterthought in the Democratic field to effectively tied for the lead among Democrats.</p>
+
+  <p>Among voters under 50, he is running second at 13%, behind Steyer at 15% and ahead of Porter at 11%. That is a demographic that campaigns spend enormous resources trying to reach, and a digital community-first strategy is precisely why that number makes sense.</p>
+
+  <p>As Emerson's executive director Spencer Kimball noted, Becerra gained 15 points among Democrats without Swalwell on the ballot. That is not just the Swalwell effect redistributing votes. The speed and scale of that shift points to something more active happening, and the digital community organizing is a significant part of that story.</p>
+
+  <h2>$650,000. Mostly First-Time Donors.</h2>
+
+  <p>Becerra's campaign publicly acknowledged the surge in support across social media and attributed a major fundraising spike to it. The numbers speak for themselves.</p>
+
+  <div class="fundraising-block">
+    <div class="fundraising-stat">
+      <span class="big">$650K</span>
+      <span class="label">Raised in<br>one week</span>
+    </div>
+    <div class="fundraising-stat">
+      <span class="big">#1</span>
+      <span class="label">ActBlue donations<br>nationwide</span>
+    </div>
+    <div class="fundraising-stat">
+      <span class="big">Majority</span>
+      <span class="label">First-time donors<br>to the campaign</span>
+    </div>
+  </div>
+
+  <p>The ActBlue figure is the one that stops you cold. Leading all ActBlue donations nationwide, across every campaign, every candidate, every race in the country, in a single week is not a local fundraising story. It is a national signal. And it was driven not by a major donor event or a celebrity endorsement, but by a groundswell of first-time supporters who found the campaign online and decided to act.</p>
+
+  <p>In the community management work I do in the private sector, one of the clearest indicators of a healthy, engaged community is the average spend per supporter, and what drives it up is not advertising, it is the feeling of personal connection and shared purpose. When people feel part of something real, they give. The majority-first-time-donor composition here is not a coincidence. It is what community engagement looks like when it converts.</p>
+
+  <h2>The Community Is Still Growing</h2>
+
+  <p>The Californians For Becerra Discord server now has 216 members, up from 170 at the time of my first article and from 50 just over a week ago. That is a 332% increase from where it started. The community continues to coordinate, discuss strategy, and find new ways to push Becerra's visibility across platforms.</p>
+
+  <p>As an active moderator inside that server, what I am watching is a community that has tasted real results and is now more motivated, not less. The KTLA outcome was a proof point that their efforts matter. The polling jump confirmed it. The fundraising announcement validated it further. Communities that see their actions produce real outcomes become more committed, not more complacent. That is the compounding effect that makes genuine digital community so powerful.</p>
+
+  <div class="pullquote">
+    <p>Communities that see their actions produce real outcomes become more committed, not more complacent. That compounding effect is exactly what campaigns are missing when they post and move on.</p>
+    <div class="pullquote-attr">The Compounding Effect</div>
+  </div>
+
+  <h2>What This Week Proves</h2>
+
+  <p>When I wrote the first article, the case study was still unfolding. The argument was directional: here is what organized digital community can do, here is why campaigns should care. One week later, the argument is empirical.</p>
+
+  <p>A community of volunteers coordinated a movement that changed the outlook at the next debate. The candidate met that criteria in a new poll. He earned a debate invitation. The campaign raised $650,000 in one week, leading ActBlue donations nationwide, mostly from new donors. His polling among Democrats tripled. He is now one point from the top of the Democratic field.</p>
+
+  <p>This did not happen because of a television ad buy. It did not happen because of a mailer. It happened because supporters found a place to organize, were given direction, took action, and saw results. The grassroots movement quickly spread across social media as others joined in to support the campaign. The outcome was a candidate who entered the week as a 4% afterthought and will walk onto a debate stage on April 22nd.</p>
+
+  <div class="closing-section">
+    <h2>The Debate Is on April 22nd</h2>
+    <p>The window that opened last week has not closed. Becerra is now a legitimate contender in this race, with polling momentum, a fundraising surge, a debate appearance, and a growing community of organized supporters behind him. What happens at that debate — and what the campaign does to capture the digital attention it will generate — will determine whether this momentum compounds or stalls. The infrastructure to capture it exists. The question is whether it gets built in time.</p>
+    <br>
+    <p style="font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--gold); margin-top: 24px; border-top: 1px solid #ffffff22; padding-top: 24px;">Jeremy Rose is a digital community strategist specializing in political campaign engagement. He is currently an active moderator inside the Californians For Becerra Discord server. He can be reached at jeremyrose02@gmail.com</p>
+  </div>
+
+</div>
+
+</body>
+</html>
